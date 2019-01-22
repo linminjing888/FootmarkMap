@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  FootmarkMap
+//
+//  Created by MinJing_Lin on 2019/1/21.
+//  Copyright © 2019 MinJing_Lin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+#import "MJExtension.h"
+#import "UIImage+Color.h"
+
+#define LSCREENW  [[UIScreen mainScreen] bounds].size.width
+#define LSCREENH [[UIScreen mainScreen] bounds].size.height
+
+#define WEAKSELf __weak typeof(self) weakSelf = self;
+
+#define COLOR_BG [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0]
+#define COLOR_Line [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]
+#define COLOR_YELLOW [UIColor colorWithRed:253/255.0 green:212/255.0 blue:49/255.0 alpha:1.0]
+
+/***  普通字体 */
+#define kFont(size) [UIFont systemFontOfSize:size]
+/***  粗体 */
+#define kBoldFont(size) [UIFont boldSystemFontOfSize:size]
+
+
+#endif /* PrefixHeader_pch */
