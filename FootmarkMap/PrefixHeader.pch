@@ -13,7 +13,7 @@
 #import "MJExtension.h"
 #import "UIImage+Color.h"
 
-#define LSCREENW  [[UIScreen mainScreen] bounds].size.width
+#define LSCREENW [[UIScreen mainScreen] bounds].size.width
 #define LSCREENH [[UIScreen mainScreen] bounds].size.height
 
 #define WEAKSELf __weak typeof(self) weakSelf = self;

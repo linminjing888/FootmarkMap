@@ -14,6 +14,8 @@ typedef void(^InfoCompleteBlock)(NSArray *dataArr, NSError *error) ;
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSArray *city;
+/// 选中城市数量
+@property (nonatomic, assign) NSInteger count;
 
 + (void)loadLocationInfo:(InfoCompleteBlock)complete;
 

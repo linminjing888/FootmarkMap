@@ -11,11 +11,13 @@
 #import "CategoryCell.h"
 #import "LMJProvinceModel.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,ProductsDelegate>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,LMJCollectionCityDelegate>
 
 @property (nonatomic, strong) UITableView * categoriesTableView;
 @property (nonatomic, strong) LMJCollectionViewController *productsController;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) UIButton *commitBtn;
+
 
 @end
 
@@ -23,11 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor =COLOR_YELLOW;
+    self.view.backgroundColor = COLOR_BG;
     
     [self setUpcategoriesTableView];
-    
     [self setUpProductsTableView];
+    [self.view addSubview:self.commitBtn];
     
     [self loadData];
 
@@ -52,6 +54,63 @@
     }];
 }
 
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return  self.dataArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CategoryCell *cell = [CategoryCell cellWithTable:tableView];
+    cell.provinceModel = self.dataArray[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.productsController.provinceModel = self.dataArray[indexPath.row];
+    [self.categoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+#pragma mark - ProductsDelegate
+
+- (void)LMJCollectionCityCount:(NSInteger)count Name:(NSString *)name {
+    [self.dataArray enumerateObjectsUsingBlock:^(LMJProvinceModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.name isEqualToString:name]) {
+            obj.count = count;
+            [self.categoriesTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:(UITableViewRowAnimationNone)];
+            [self.categoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+            *stop = YES;
+        }
+    }];
+}
+
+- (void)commitBtnClicked {
+    NSMutableArray *provinceNameArr = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *cityNameArr = [NSMutableArray arrayWithCapacity:0];
+
+    [self.dataArray enumerateObjectsUsingBlock:^(LMJProvinceModel *provinceModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (provinceModel.count > 0) {
+            [provinceNameArr addObject:provinceModel.name];
+            [provinceModel.city enumerateObjectsUsingBlock:^(LMJCityModel *cityModel, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (cityModel.isSelected) {
+                    [cityNameArr addObject:cityModel];
+                }
+            }];
+        }
+    }];
+    NSLog(@"%ld-%ld",provinceNameArr.count,cityNameArr.count);
+}
+
+#pragma mark - setter/getter
+
 - (void)setUpcategoriesTableView {
     self.categoriesTableView = ({
         UITableView *tabView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -64,7 +123,7 @@
     });
     [self.view addSubview:self.categoriesTableView];
     [self.categoriesTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(64);
+        make.top.equalTo(self.view).offset(20);
         make.leading.equalTo(self.view);
         make.bottom.equalTo(self.view);
         make.width.mas_equalTo(self.view).multipliedBy(0.25);
@@ -79,40 +138,28 @@
     self.productsController.delegate =self;
 }
 
-#pragma mark - UITableViewDelegate,UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  self.dataArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CategoryCell *cell = [CategoryCell cellWithTable:tableView];
-    cell.provinceModel = self.dataArray[indexPath.row];
-    return cell;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    self.productsController.provinceModel = self.dataArray[indexPath.row];
-}
-
-#pragma mark - ProductsDelegate
-
-- (void)willDislayHeaderView:(NSInteger)section {
-    [self.categoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:section inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-}
-
-- (void)didEndDislayHeaderView:(NSInteger)section {
-    [self.categoriesTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:section+1 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+- (UIButton *)commitBtn {
+    if (!_commitBtn) {
+        _commitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _commitBtn.frame = CGRectMake(LSCREENW * 0.3, LSCREENH-80, LSCREENW*0.65, 50);
+        _commitBtn.backgroundColor = COLOR_BG;
+        _commitBtn.layer.cornerRadius = 10.0f;
+        _commitBtn.clipsToBounds = YES;
+        [_commitBtn setTitle:@"提交" forState:UIControlStateNormal];
+        [_commitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_commitBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+        [_commitBtn setBackgroundImage:[UIImage createImageWithColor:COLOR_YELLOW] forState:UIControlStateNormal];
+        [_commitBtn setBackgroundImage:[UIImage createImageWithColor:COLOR_BG] forState:UIControlStateDisabled];
+        [_commitBtn addTarget:self action:@selector(commitBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+//        _commitBtn.enabled = NO;
+    }
+    return _commitBtn;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
 

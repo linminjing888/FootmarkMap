@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImageView *backImageView;
 @property (nonatomic, strong) UIView *yellowView;
 @property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UILabel * numLabel;
 
 @end
 
@@ -55,11 +56,25 @@
         _nameLabel.highlightedTextColor = [UIColor blackColor];
         [self.contentView addSubview:_nameLabel];
         
+        _numLabel = [[UILabel alloc]init];
+        _numLabel.backgroundColor = [UIColor redColor];
+        _numLabel.textAlignment = NSTextAlignmentCenter;
+        _numLabel.font = kFont(12);
+        _numLabel.textColor = [UIColor whiteColor];
+        _numLabel.layer.cornerRadius = 8.0f;
+        _numLabel.clipsToBounds = YES;
+        [self.contentView addSubview:_numLabel];
+        
         [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
         [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self);
+            make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 20));
+        }];
+        [_numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self).offset(-5);
+            make.centerY.equalTo(self);
+            make.size.mas_equalTo(CGSizeMake(16, 16));
         }];
         [_yellowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(self);
@@ -90,6 +105,12 @@
 - (void)setProvinceModel:(LMJProvinceModel *)provinceModel {
     _provinceModel = provinceModel;
     self.nameLabel.text = _provinceModel.name;
+    if (provinceModel.count > 0) {
+        self.numLabel.hidden = NO;
+        self.numLabel.text = [NSString stringWithFormat:@"%ld",provinceModel.count];
+    }else{
+        self.numLabel.hidden = YES;
+    }
 }
 
 - (void)awakeFromNib {

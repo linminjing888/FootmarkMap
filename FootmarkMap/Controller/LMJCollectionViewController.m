@@ -23,7 +23,7 @@ static const CGFloat SpacingW = 10.0f;
 @implementation LMJCollectionViewController
 
 - (void)loadView {
-    self.view = [[UIView alloc]initWithFrame:CGRectMake(LSCREENW * 0.25, 64, LSCREENW * 0.75, LSCREENH - 64)];
+    self.view = [[UIView alloc]initWithFrame:CGRectMake(LSCREENW * 0.25, 20, LSCREENW * 0.75, LSCREENH - 20)];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +55,14 @@ static const CGFloat SpacingW = 10.0f;
     LMJCityModel *model = self.dataArray[indexPath.row];
     model.isSelected = !model.isSelected;
     [self.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexPath.row inSection:0]]];
+    
+    __block NSInteger cityCount = 0;
+    [self.dataArray enumerateObjectsUsingBlock:^(LMJCityModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.isSelected == YES) {
+            cityCount++;
+        }
+    }];
+    [self.delegate LMJCollectionCityCount:cityCount Name:self.provinceModel.name];
 }
 
 #pragma mark getter/setter
@@ -96,6 +104,8 @@ static const CGFloat SpacingW = 10.0f;
     }
     return _dataArray;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

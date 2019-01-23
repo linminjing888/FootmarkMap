@@ -10,16 +10,15 @@
 
 @class LMJProvinceModel;
 
-@protocol ProductsDelegate<NSObject>
+@protocol LMJCollectionCityDelegate<NSObject>
 
-- (void)willDislayHeaderView:(NSInteger)section;
-- (void)didEndDislayHeaderView:(NSInteger)section;
+- (void)LMJCollectionCityCount:(NSInteger)count Name:(NSString *)name;
 
 @end
 
 @interface LMJCollectionViewController : UIViewController
 
-@property (nonatomic, weak) id<ProductsDelegate>delegate;
+@property (nonatomic, weak) id<LMJCollectionCityDelegate>delegate;
 
 @property (nonatomic, strong) LMJProvinceModel *provinceModel;
 
