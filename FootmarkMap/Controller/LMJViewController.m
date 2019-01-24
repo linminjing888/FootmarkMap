@@ -6,22 +6,22 @@
 //  Copyright © 2019 MinJing_Lin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LMJViewController.h"
 #import "LMJCollectionViewController.h"
 #import "CategoryCell.h"
 #import "LMJProvinceModel.h"
+#import "LMJMapViewController.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,LMJCollectionCityDelegate>
+@interface LMJViewController ()<UITableViewDelegate,UITableViewDataSource,LMJCollectionCityDelegate>
 
 @property (nonatomic, strong) UITableView * categoriesTableView;
 @property (nonatomic, strong) LMJCollectionViewController *productsController;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) UIButton *commitBtn;
 
-
 @end
 
-@implementation ViewController
+@implementation LMJViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,6 +107,12 @@
         }
     }];
     NSLog(@"%ld-%ld",provinceNameArr.count,cityNameArr.count);
+    
+    LMJMapViewController *mapVC = [[LMJMapViewController alloc]init];
+    mapVC.provinceArr = [provinceNameArr copy];
+    mapVC.cityArr = [cityNameArr copy];
+    [self.navigationController pushViewController:mapVC animated:YES];
+    
 }
 
 #pragma mark - setter/getter

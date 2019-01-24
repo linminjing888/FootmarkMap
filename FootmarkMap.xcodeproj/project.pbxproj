@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600B3FAB21F9EE2F002BCD93 /* LMJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */; };
+		600B3FAE21F9F03F002BCD93 /* ChinaMapPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */; };
+		600B3FAF21F9F03F002BCD93 /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */; };
+		600B3FB221F9F088002BCD93 /* WGMapCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FB121F9F088002BCD93 /* WGMapCommonView.m */; };
 		6047338F21F6A49A00108A62 /* LocationJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6047338E21F6A49900108A62 /* LocationJson.json */; };
 		6047339221F6A55A00108A62 /* LMJProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6047339121F6A55A00108A62 /* LMJProvinceModel.m */; };
 		60A28DC121F607AD00199217 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC021F607AD00199217 /* AppDelegate.m */; };
-		60A28DC421F607AD00199217 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC321F607AD00199217 /* ViewController.m */; };
+		60A28DC421F607AD00199217 /* LMJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC321F607AD00199217 /* LMJViewController.m */; };
 		60A28DC721F607AD00199217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DC521F607AD00199217 /* Main.storyboard */; };
 		60A28DC921F607AF00199217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DC821F607AF00199217 /* Assets.xcassets */; };
 		60A28DCC21F607AF00199217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DCA21F607AF00199217 /* LaunchScreen.storyboard */; };
@@ -54,14 +58,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		600B3FA921F9EE2F002BCD93 /* LMJMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMapViewController.h; sourceTree = "<group>"; };
+		600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJMapViewController.m; sourceTree = "<group>"; };
+		600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ChinaMapPaths.plist; sourceTree = "<group>"; };
+		600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = provinceInfo.plist; sourceTree = "<group>"; };
+		600B3FB021F9F088002BCD93 /* WGMapCommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMapCommonView.h; sourceTree = "<group>"; };
+		600B3FB121F9F088002BCD93 /* WGMapCommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMapCommonView.m; sourceTree = "<group>"; };
 		6047338E21F6A49900108A62 /* LocationJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationJson.json; sourceTree = "<group>"; };
 		6047339021F6A55A00108A62 /* LMJProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJProvinceModel.h; sourceTree = "<group>"; };
 		6047339121F6A55A00108A62 /* LMJProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJProvinceModel.m; sourceTree = "<group>"; };
 		60A28DBC21F607AD00199217 /* FootmarkMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootmarkMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A28DBF21F607AD00199217 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60A28DC021F607AD00199217 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		60A28DC221F607AD00199217 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		60A28DC321F607AD00199217 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		60A28DC221F607AD00199217 /* LMJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJViewController.h; sourceTree = "<group>"; };
+		60A28DC321F607AD00199217 /* LMJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJViewController.m; sourceTree = "<group>"; };
 		60A28DC621F607AD00199217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60A28DC821F607AF00199217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A28DCB21F607AF00199217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -198,10 +208,12 @@
 		60A28DE421F60A5A00199217 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				60A28DC221F607AD00199217 /* ViewController.h */,
-				60A28DC321F607AD00199217 /* ViewController.m */,
+				60A28DC221F607AD00199217 /* LMJViewController.h */,
+				60A28DC321F607AD00199217 /* LMJViewController.m */,
 				60A28E9B21F60BCA00199217 /* LMJCollectionViewController.h */,
 				60A28E9C21F60BCA00199217 /* LMJCollectionViewController.m */,
+				600B3FA921F9EE2F002BCD93 /* LMJMapViewController.h */,
+				600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +243,8 @@
 		60A28DE721F60A6F00199217 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */,
+				600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */,
 				6047338E21F6A49900108A62 /* LocationJson.json */,
 			);
 			path = Resources;
@@ -239,6 +253,8 @@
 		60A28DEA21F60AF600199217 /* thirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				600B3FB021F9F088002BCD93 /* WGMapCommonView.h */,
+				600B3FB121F9F088002BCD93 /* WGMapCommonView.m */,
 				60A28DEB21F60B0900199217 /* Masonry */,
 				60A28E3221F60B0A00199217 /* MJExtension */,
 			);
@@ -396,6 +412,8 @@
 			files = (
 				60A28DCC21F607AF00199217 /* LaunchScreen.storyboard in Resources */,
 				60A28DC921F607AF00199217 /* Assets.xcassets in Resources */,
+				600B3FAF21F9F03F002BCD93 /* provinceInfo.plist in Resources */,
+				600B3FAE21F9F03F002BCD93 /* ChinaMapPaths.plist in Resources */,
 				6047338F21F6A49A00108A62 /* LocationJson.json in Resources */,
 				60A28DC721F607AD00199217 /* Main.storyboard in Resources */,
 			);
@@ -415,7 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A28DC421F607AD00199217 /* ViewController.m in Sources */,
+				60A28DC421F607AD00199217 /* LMJViewController.m in Sources */,
 				60A28E8421F60B0A00199217 /* NSObject+MJKeyValue.m in Sources */,
 				60A28E7B21F60B0A00199217 /* MASCompositeConstraint.m in Sources */,
 				60A28E8C21F60B0A00199217 /* MJFoundation.m in Sources */,
@@ -432,6 +450,7 @@
 				60A28E8121F60B0A00199217 /* MASViewConstraint.m in Sources */,
 				60A28E7A21F60B0A00199217 /* ViewController+MASAdditions.m in Sources */,
 				60A28E8821F60B0A00199217 /* NSObject+MJProperty.m in Sources */,
+				600B3FAB21F9EE2F002BCD93 /* LMJMapViewController.m in Sources */,
 				60A28DC121F607AD00199217 /* AppDelegate.m in Sources */,
 				60A28EBC21F6134100199217 /* LMJCollectionViewCell.m in Sources */,
 				60A28E7F21F60B0A00199217 /* View+MASAdditions.m in Sources */,
@@ -440,6 +459,7 @@
 				60A28E9D21F60BCA00199217 /* LMJCollectionViewController.m in Sources */,
 				60A28E8021F60B0A00199217 /* MASConstraint.m in Sources */,
 				60A28E8A21F60B0A00199217 /* NSString+MJExtension.m in Sources */,
+				600B3FB221F9F088002BCD93 /* WGMapCommonView.m in Sources */,
 				60A28E7C21F60B0A00199217 /* MASConstraintMaker.m in Sources */,
 				60A28E8921F60B0A00199217 /* NSObject+MJClass.m in Sources */,
 				60A28E7E21F60B0A00199217 /* NSArray+MASAdditions.m in Sources */,
@@ -600,6 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LW8EKH787L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FootmarkMap/PrefixHeader.pch";
 				INFOPLIST_FILE = FootmarkMap/Info.plist;
@@ -618,6 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LW8EKH787L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FootmarkMap/PrefixHeader.pch";
 				INFOPLIST_FILE = FootmarkMap/Info.plist;

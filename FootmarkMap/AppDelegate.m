@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LMJViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,18 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    LMJViewController * VC = [[LMJViewController alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:VC];
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyWindow];
+    
+    
     return YES;
 }
 
