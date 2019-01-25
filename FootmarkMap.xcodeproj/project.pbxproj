@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		600B3FAB21F9EE2F002BCD93 /* LMJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */; };
-		600B3FAE21F9F03F002BCD93 /* ChinaMapPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */; };
-		600B3FAF21F9F03F002BCD93 /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */; };
 		600B3FB221F9F088002BCD93 /* WGMapCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FB121F9F088002BCD93 /* WGMapCommonView.m */; };
 		6047338F21F6A49A00108A62 /* LocationJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6047338E21F6A49900108A62 /* LocationJson.json */; };
 		6047339221F6A55A00108A62 /* LMJProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6047339121F6A55A00108A62 /* LMJProvinceModel.m */; };
+		6051A56921FAB476009DED71 /* LMJBaseNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051A56821FAB476009DED71 /* LMJBaseNaviController.m */; };
+		6051A56E21FB53E3009DED71 /* ChinaMapPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6051A56C21FB53E2009DED71 /* ChinaMapPaths.plist */; };
+		6051A57721FB6073009DED71 /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6051A57621FB6072009DED71 /* provinceInfo.plist */; };
+		6051A57A21FB69C0009DED71 /* UILabel+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051A57921FB69C0009DED71 /* UILabel+Color.m */; };
 		60A28DC121F607AD00199217 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC021F607AD00199217 /* AppDelegate.m */; };
 		60A28DC421F607AD00199217 /* LMJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC321F607AD00199217 /* LMJViewController.m */; };
 		60A28DC721F607AD00199217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DC521F607AD00199217 /* Main.storyboard */; };
@@ -41,8 +43,8 @@
 		60A28E8B21F60B0A00199217 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28E4321F60B0A00199217 /* MJPropertyKey.m */; };
 		60A28E8C21F60B0A00199217 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28E4721F60B0A00199217 /* MJFoundation.m */; };
 		60A28E9D21F60BCA00199217 /* LMJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28E9C21F60BCA00199217 /* LMJCollectionViewController.m */; };
-		60A28EA321F60CD500199217 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EA121F60CD400199217 /* CategoryCell.m */; };
-		60A28EAB21F60CEA00199217 /* ProductHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EA821F60CEA00199217 /* ProductHeadView.m */; };
+		60A28EA321F60CD500199217 /* LMJCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EA121F60CD400199217 /* LMJCategoryCell.m */; };
+		60A28EAB21F60CEA00199217 /* LMJProductHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EA821F60CEA00199217 /* LMJProductHeadView.m */; };
 		60A28EB821F60D4900199217 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EB421F60D4900199217 /* UIImage+Color.m */; };
 		60A28EBC21F6134100199217 /* LMJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28EBB21F6134100199217 /* LMJCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -60,13 +62,17 @@
 /* Begin PBXFileReference section */
 		600B3FA921F9EE2F002BCD93 /* LMJMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMapViewController.h; sourceTree = "<group>"; };
 		600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJMapViewController.m; sourceTree = "<group>"; };
-		600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ChinaMapPaths.plist; sourceTree = "<group>"; };
-		600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = provinceInfo.plist; sourceTree = "<group>"; };
 		600B3FB021F9F088002BCD93 /* WGMapCommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMapCommonView.h; sourceTree = "<group>"; };
 		600B3FB121F9F088002BCD93 /* WGMapCommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMapCommonView.m; sourceTree = "<group>"; };
 		6047338E21F6A49900108A62 /* LocationJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationJson.json; sourceTree = "<group>"; };
 		6047339021F6A55A00108A62 /* LMJProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJProvinceModel.h; sourceTree = "<group>"; };
 		6047339121F6A55A00108A62 /* LMJProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJProvinceModel.m; sourceTree = "<group>"; };
+		6051A56721FAB476009DED71 /* LMJBaseNaviController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJBaseNaviController.h; sourceTree = "<group>"; };
+		6051A56821FAB476009DED71 /* LMJBaseNaviController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJBaseNaviController.m; sourceTree = "<group>"; };
+		6051A56C21FB53E2009DED71 /* ChinaMapPaths.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ChinaMapPaths.plist; sourceTree = "<group>"; };
+		6051A57621FB6072009DED71 /* provinceInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = provinceInfo.plist; sourceTree = "<group>"; };
+		6051A57821FB69C0009DED71 /* UILabel+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Color.h"; sourceTree = "<group>"; };
+		6051A57921FB69C0009DED71 /* UILabel+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Color.m"; sourceTree = "<group>"; };
 		60A28DBC21F607AD00199217 /* FootmarkMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootmarkMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A28DBF21F607AD00199217 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60A28DC021F607AD00199217 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,10 +135,10 @@
 		60A28E4721F60B0A00199217 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
 		60A28E9B21F60BCA00199217 /* LMJCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCollectionViewController.h; sourceTree = "<group>"; };
 		60A28E9C21F60BCA00199217 /* LMJCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJCollectionViewController.m; sourceTree = "<group>"; };
-		60A28E9F21F60CD400199217 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
-		60A28EA121F60CD400199217 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
-		60A28EA621F60CEA00199217 /* ProductHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHeadView.h; sourceTree = "<group>"; };
-		60A28EA821F60CEA00199217 /* ProductHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHeadView.m; sourceTree = "<group>"; };
+		60A28E9F21F60CD400199217 /* LMJCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJCategoryCell.h; sourceTree = "<group>"; };
+		60A28EA121F60CD400199217 /* LMJCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJCategoryCell.m; sourceTree = "<group>"; };
+		60A28EA621F60CEA00199217 /* LMJProductHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJProductHeadView.h; sourceTree = "<group>"; };
+		60A28EA821F60CEA00199217 /* LMJProductHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJProductHeadView.m; sourceTree = "<group>"; };
 		60A28EB421F60D4900199217 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		60A28EB521F60D4900199217 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		60A28EBA21F6134100199217 /* LMJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJCollectionViewCell.h; sourceTree = "<group>"; };
@@ -157,6 +163,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6051A56521FAB419009DED71 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				60A28DE421F60A5A00199217 /* Controller */,
+				60A28DE621F60A6900199217 /* Views */,
+				60A28DE521F60A6300199217 /* Model */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		6051A56621FAB450009DED71 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				6051A56721FAB476009DED71 /* LMJBaseNaviController.h */,
+				6051A56821FAB476009DED71 /* LMJBaseNaviController.m */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
 		60A28DB321F607AD00199217 = {
 			isa = PBXGroup;
 			children = (
@@ -181,12 +206,11 @@
 			children = (
 				60A28DBF21F607AD00199217 /* AppDelegate.h */,
 				60A28DC021F607AD00199217 /* AppDelegate.m */,
-				60A28DE421F60A5A00199217 /* Controller */,
+				6051A56521FAB419009DED71 /* MainVC */,
 				60A28EB321F60D3B00199217 /* Category */,
-				60A28DE521F60A6300199217 /* Model */,
 				60A28DE721F60A6F00199217 /* Resources */,
 				60A28DEA21F60AF600199217 /* thirdLibrary */,
-				60A28DE621F60A6900199217 /* Views */,
+				6051A56621FAB450009DED71 /* BaseVC */,
 				60A28DCD21F607AF00199217 /* Info.plist */,
 				60A28DCA21F607AF00199217 /* LaunchScreen.storyboard */,
 				60A28DCE21F607AF00199217 /* main.m */,
@@ -230,10 +254,10 @@
 		60A28DE621F60A6900199217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				60A28EA621F60CEA00199217 /* ProductHeadView.h */,
-				60A28EA821F60CEA00199217 /* ProductHeadView.m */,
-				60A28E9F21F60CD400199217 /* CategoryCell.h */,
-				60A28EA121F60CD400199217 /* CategoryCell.m */,
+				60A28EA621F60CEA00199217 /* LMJProductHeadView.h */,
+				60A28EA821F60CEA00199217 /* LMJProductHeadView.m */,
+				60A28E9F21F60CD400199217 /* LMJCategoryCell.h */,
+				60A28EA121F60CD400199217 /* LMJCategoryCell.m */,
 				60A28EBA21F6134100199217 /* LMJCollectionViewCell.h */,
 				60A28EBB21F6134100199217 /* LMJCollectionViewCell.m */,
 			);
@@ -243,8 +267,8 @@
 		60A28DE721F60A6F00199217 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				600B3FAC21F9F03F002BCD93 /* ChinaMapPaths.plist */,
-				600B3FAD21F9F03F002BCD93 /* provinceInfo.plist */,
+				6051A57621FB6072009DED71 /* provinceInfo.plist */,
+				6051A56C21FB53E2009DED71 /* ChinaMapPaths.plist */,
 				6047338E21F6A49900108A62 /* LocationJson.json */,
 			);
 			path = Resources;
@@ -326,6 +350,8 @@
 			children = (
 				60A28EB521F60D4900199217 /* UIImage+Color.h */,
 				60A28EB421F60D4900199217 /* UIImage+Color.m */,
+				6051A57821FB69C0009DED71 /* UILabel+Color.h */,
+				6051A57921FB69C0009DED71 /* UILabel+Color.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -412,8 +438,8 @@
 			files = (
 				60A28DCC21F607AF00199217 /* LaunchScreen.storyboard in Resources */,
 				60A28DC921F607AF00199217 /* Assets.xcassets in Resources */,
-				600B3FAF21F9F03F002BCD93 /* provinceInfo.plist in Resources */,
-				600B3FAE21F9F03F002BCD93 /* ChinaMapPaths.plist in Resources */,
+				6051A57721FB6073009DED71 /* provinceInfo.plist in Resources */,
+				6051A56E21FB53E3009DED71 /* ChinaMapPaths.plist in Resources */,
 				6047338F21F6A49A00108A62 /* LocationJson.json in Resources */,
 				60A28DC721F607AD00199217 /* Main.storyboard in Resources */,
 			);
@@ -435,9 +461,11 @@
 			files = (
 				60A28DC421F607AD00199217 /* LMJViewController.m in Sources */,
 				60A28E8421F60B0A00199217 /* NSObject+MJKeyValue.m in Sources */,
+				6051A56921FAB476009DED71 /* LMJBaseNaviController.m in Sources */,
 				60A28E7B21F60B0A00199217 /* MASCompositeConstraint.m in Sources */,
 				60A28E8C21F60B0A00199217 /* MJFoundation.m in Sources */,
 				60A28DCF21F607AF00199217 /* main.m in Sources */,
+				6051A57A21FB69C0009DED71 /* UILabel+Color.m in Sources */,
 				60A28E8B21F60B0A00199217 /* MJPropertyKey.m in Sources */,
 				60A28E8521F60B0A00199217 /* MJProperty.m in Sources */,
 				60A28E7D21F60B0A00199217 /* MASLayoutConstraint.m in Sources */,
@@ -445,8 +473,8 @@
 				60A28EB821F60D4900199217 /* UIImage+Color.m in Sources */,
 				60A28E8621F60B0A00199217 /* NSObject+MJCoding.m in Sources */,
 				6047339221F6A55A00108A62 /* LMJProvinceModel.m in Sources */,
-				60A28EAB21F60CEA00199217 /* ProductHeadView.m in Sources */,
-				60A28EA321F60CD500199217 /* CategoryCell.m in Sources */,
+				60A28EAB21F60CEA00199217 /* LMJProductHeadView.m in Sources */,
+				60A28EA321F60CD500199217 /* LMJCategoryCell.m in Sources */,
 				60A28E8121F60B0A00199217 /* MASViewConstraint.m in Sources */,
 				60A28E7A21F60B0A00199217 /* ViewController+MASAdditions.m in Sources */,
 				60A28E8821F60B0A00199217 /* NSObject+MJProperty.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "LMJViewController.h"
 #import "LMJCollectionViewController.h"
-#import "CategoryCell.h"
+#import "LMJCategoryCell.h"
 #import "LMJProvinceModel.h"
 #import "LMJMapViewController.h"
 
@@ -16,8 +16,10 @@
 
 @property (nonatomic, strong) UITableView * categoriesTableView;
 @property (nonatomic, strong) LMJCollectionViewController *productsController;
-@property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) UIButton *commitBtn;
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *provinceNameArr;
+@property (nonatomic, strong) NSMutableArray *cityNameArr;
 
 @end
 
@@ -26,13 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = COLOR_BG;
+    self.title = @"脚步地图";
     
     [self setUpcategoriesTableView];
     [self setUpProductsTableView];
     [self.view addSubview:self.commitBtn];
     
     [self loadData];
-
 }
 
 - (void)loadData {
@@ -68,7 +70,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CategoryCell *cell = [CategoryCell cellWithTable:tableView];
+    LMJCategoryCell *cell = [LMJCategoryCell cellWithTable:tableView];
     cell.provinceModel = self.dataArray[indexPath.row];
     return cell;
 }
@@ -90,27 +92,42 @@
             *stop = YES;
         }
     }];
+    
+    [self reloaProvinceAndCityArray];
 }
 
-- (void)commitBtnClicked {
-    NSMutableArray *provinceNameArr = [NSMutableArray arrayWithCapacity:0];
-    NSMutableArray *cityNameArr = [NSMutableArray arrayWithCapacity:0];
-
+- (void)reloaProvinceAndCityArray {
+    if (self.provinceNameArr.count != 0) {
+        [self.provinceNameArr removeAllObjects];
+    }
+    if (self.cityNameArr.count != 0) {
+        [self.cityNameArr removeAllObjects];
+    }
     [self.dataArray enumerateObjectsUsingBlock:^(LMJProvinceModel *provinceModel, NSUInteger idx, BOOL * _Nonnull stop) {
         if (provinceModel.count > 0) {
-            [provinceNameArr addObject:provinceModel.name];
+            [self.provinceNameArr addObject:provinceModel.name];
             [provinceModel.city enumerateObjectsUsingBlock:^(LMJCityModel *cityModel, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (cityModel.isSelected) {
-                    [cityNameArr addObject:cityModel];
+                    [self.cityNameArr addObject:cityModel];
                 }
             }];
         }
     }];
-    NSLog(@"%ld-%ld",provinceNameArr.count,cityNameArr.count);
+    if (self.cityNameArr.count > 0) {
+        self.commitBtn.enabled = YES;
+    }else{
+        self.commitBtn.enabled = NO;
+    }
+}
+
+- (void)commitBtnClicked {
     
+    if (self.cityNameArr.count == 0) {
+        return;
+    }
     LMJMapViewController *mapVC = [[LMJMapViewController alloc]init];
-    mapVC.provinceArr = [provinceNameArr copy];
-    mapVC.cityArr = [cityNameArr copy];
+    mapVC.provinceArr = [self.provinceNameArr copy];
+    mapVC.cityArr = [self.cityNameArr copy];
     [self.navigationController pushViewController:mapVC animated:YES];
     
 }
@@ -154,12 +171,26 @@
         [_commitBtn setTitle:@"提交" forState:UIControlStateNormal];
         [_commitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_commitBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-        [_commitBtn setBackgroundImage:[UIImage createImageWithColor:COLOR_YELLOW] forState:UIControlStateNormal];
-        [_commitBtn setBackgroundImage:[UIImage createImageWithColor:COLOR_BG] forState:UIControlStateDisabled];
+        [_commitBtn setBackgroundImage:[UIImage lmj_createImageWithColor:COLOR_YELLOW] forState:UIControlStateNormal];
+        [_commitBtn setBackgroundImage:[UIImage lmj_createImageWithColor:COLOR_BG] forState:UIControlStateDisabled];
         [_commitBtn addTarget:self action:@selector(commitBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-//        _commitBtn.enabled = NO;
+        _commitBtn.enabled = NO;
     }
     return _commitBtn;
+}
+
+- (NSMutableArray *)provinceNameArr {
+    if (!_provinceNameArr) {
+        _provinceNameArr = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _provinceNameArr;
+}
+
+- (NSMutableArray *)cityNameArr {
+    if (!_cityNameArr) {
+        _cityNameArr = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _cityNameArr;
 }
 
 - (void)didReceiveMemoryWarning {

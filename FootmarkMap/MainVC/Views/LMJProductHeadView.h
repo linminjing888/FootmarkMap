@@ -1,5 +1,5 @@
 //
-//  ProductHeadView.h
+//  LMJProductHeadView.h
 //  BeeQuick_One
 //
 //  Created by MinJing_Lin on 16/10/22.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductHeadView : UITableViewHeaderFooterView
+@interface LMJProductHeadView : UITableViewHeaderFooterView
 
 + (instancetype)headerCellWith:(UITableView *)tableView;
 
-@property (nonatomic,copy) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 @end

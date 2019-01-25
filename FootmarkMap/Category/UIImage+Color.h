@@ -10,6 +10,6 @@
 
 @interface UIImage (Color)
 
-+ (UIImage *)createImageWithColor:(UIColor *)color;
++ (UIImage *)lmj_createImageWithColor:(UIColor *)color;
 
 @end

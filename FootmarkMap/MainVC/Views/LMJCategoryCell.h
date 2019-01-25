@@ -1,5 +1,5 @@
 //
-//  CategoryCell.h
+//  LMJCategoryCell.h
 //  BeeQuick_One
 //
 //  Created by MinJing_Lin on 16/10/22.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class LMJProvinceModel;
-@interface CategoryCell : UITableViewCell
+@interface LMJCategoryCell : UITableViewCell
 
 + (instancetype)cellWithTable:(UITableView *)tableView;
 

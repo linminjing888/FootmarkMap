@@ -10,7 +10,8 @@
 #import "LMJCollectionViewCell.h"
 #import "LMJProvinceModel.h"
 
-static const CGFloat SpacingW = 10.0f;
+static const CGFloat ColectionViewSpacingW = 10.0f;
+static const CGFloat ColectionViewScale = 0.75;;
 
 @interface LMJCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -23,8 +24,9 @@ static const CGFloat SpacingW = 10.0f;
 @implementation LMJCollectionViewController
 
 - (void)loadView {
-    self.view = [[UIView alloc]initWithFrame:CGRectMake(LSCREENW * 0.25, 20, LSCREENW * 0.75, LSCREENH - 20)];
+    self.view = [[UIView alloc]initWithFrame:CGRectMake(LSCREENW * (1 - ColectionViewScale), 20, LSCREENW * ColectionViewScale, LSCREENH - 20)];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -47,7 +49,7 @@ static const CGFloat SpacingW = 10.0f;
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((LSCREENW*0.75 - SpacingW * 4) / 3, 40);
+    return CGSizeMake((LSCREENW * ColectionViewScale - ColectionViewSpacingW * 4) / 3, 40);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,9 +79,9 @@ static const CGFloat SpacingW = 10.0f;
     if (!_flowLayout) {
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
         _flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _flowLayout.minimumInteritemSpacing = SpacingW;
-        _flowLayout.minimumLineSpacing = SpacingW;
-        _flowLayout.sectionInset = UIEdgeInsetsMake(SpacingW, SpacingW, SpacingW, SpacingW);
+        _flowLayout.minimumInteritemSpacing = ColectionViewSpacingW;
+        _flowLayout.minimumLineSpacing = ColectionViewSpacingW;
+        _flowLayout.sectionInset = UIEdgeInsetsMake(ColectionViewSpacingW, ColectionViewSpacingW, ColectionViewSpacingW, ColectionViewSpacingW);
     }
     return _flowLayout;
 }
@@ -104,8 +106,6 @@ static const CGFloat SpacingW = 10.0f;
     }
     return _dataArray;
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

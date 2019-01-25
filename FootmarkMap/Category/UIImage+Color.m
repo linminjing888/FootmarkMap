@@ -10,7 +10,7 @@
 
 @implementation UIImage (Color)
 
-+ (UIImage *)createImageWithColor:(UIColor *)color {
++ (UIImage *)lmj_createImageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

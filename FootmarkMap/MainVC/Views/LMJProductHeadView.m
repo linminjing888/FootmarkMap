@@ -1,29 +1,31 @@
 //
-//  ProductHeadView.m
+//  LMJProductHeadView.m
 //  BeeQuick_One
 //
 //  Created by MinJing_Lin on 16/10/22.
 //  Copyright © 2016年 MinJing_Lin. All rights reserved.
 //
 
-#import "ProductHeadView.h"
+#import "LMJProductHeadView.h"
 
-@interface ProductHeadView()
-@property (nonatomic,strong) UILabel *titleView;
+@interface LMJProductHeadView()
+
+@property (nonatomic, strong) UILabel *titleView;
+
 @end
-@implementation ProductHeadView
+
+@implementation LMJProductHeadView
 
 + (instancetype)headerCellWith:(UITableView *)tableView {
-    ProductHeadView *headerCell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+    LMJProductHeadView *headerCell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
     if (headerCell == nil) {
-        headerCell = [[ProductHeadView alloc]initWithReuseIdentifier:@"header"];
+        headerCell = [[LMJProductHeadView alloc]initWithReuseIdentifier:@"header"];
     }
     return headerCell;
 }
--(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self=[super initWithReuseIdentifier:reuseIdentifier])
-    {
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
+        
         self.contentView.backgroundColor = COLOR_BG;
         _titleView = [[UILabel alloc]init];
         _titleView.backgroundColor = [UIColor clearColor];

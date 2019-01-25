@@ -16,6 +16,16 @@
 #define LSCREENW [[UIScreen mainScreen] bounds].size.width
 #define LSCREENH [[UIScreen mainScreen] bounds].size.height
 
+/// iPhone X
+#define MJiPhoneX (LSCREENW == 375.f && LSCREENH == 812.f ? YES : NO)
+#define MJStatusBarHeight (MJiPhoneX ? 44.f : 20.f)
+/// navigation bar
+#define MJNavBarHeight self.navigationController.navigationBar.frame.size.height
+///  Status bar & navigation bar height 64/88
+#define MJStatusAndNavHeight (MJStatusBarHeight + MJNavBarHeight)
+/// Tabbar safe bottom margin.
+#define MJTabbarSafeBottomMargin (MJiPhoneX ? 34.f : 0.f)
+
 #define WEAKSELf __weak typeof(self) weakSelf = self;
 
 #define COLOR_BG [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0]

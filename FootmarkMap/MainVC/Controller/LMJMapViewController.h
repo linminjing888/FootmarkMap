@@ -10,8 +10,9 @@
 
 @interface LMJMapViewController : UIViewController
 
+/// 选中的省数组
 @property (nonatomic, strong) NSArray *provinceArr;
-
+/// 选中的市数组
 @property (nonatomic, strong) NSArray *cityArr;
 
 @end

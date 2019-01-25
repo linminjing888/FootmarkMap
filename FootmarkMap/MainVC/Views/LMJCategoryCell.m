@@ -1,31 +1,31 @@
 //
-//  CategoryCell.m
+//  LMJCategoryCell.m
 //  BeeQuick_One
 //
 //  Created by MinJing_Lin on 16/10/22.
 //  Copyright © 2016年 MinJing_Lin. All rights reserved.
 //
 
-#import "CategoryCell.h"
+#import "LMJCategoryCell.h"
 #import "LMJProvinceModel.h"
 
-@interface CategoryCell()
+@interface LMJCategoryCell()
 
 @property (nonatomic, strong) UILabel * nameLabel;
 @property (nonatomic, strong) UIImageView *backImageView;
 @property (nonatomic, strong) UIView *yellowView;
 @property (nonatomic, strong) UIView *lineView;
-@property (nonatomic, strong) UILabel * numLabel;
+@property (nonatomic, strong) UILabel *numLabel;
 
 @end
 
-@implementation CategoryCell
+@implementation LMJCategoryCell
 
 + (instancetype)cellWithTable:(UITableView *)tableView {
     static NSString *cellId = @"CategoryCellID";
-    CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    LMJCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil) {
-        cell = [[CategoryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[LMJCategoryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -36,8 +36,8 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         _backImageView = [[UIImageView alloc]init];
-        _backImageView.image = [UIImage createImageWithColor:COLOR_BG];
-        _backImageView.highlightedImage = [UIImage createImageWithColor:[UIColor whiteColor]];
+        _backImageView.image = [UIImage lmj_createImageWithColor:COLOR_BG];
+        _backImageView.highlightedImage = [UIImage lmj_createImageWithColor:[UIColor whiteColor]];
         [self.contentView addSubview:_backImageView];
         
         _yellowView = [[UIView alloc]init];
