@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		600B3FAB21F9EE2F002BCD93 /* LMJMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */; };
 		600B3FB221F9F088002BCD93 /* WGMapCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B3FB121F9F088002BCD93 /* WGMapCommonView.m */; };
+		604447E522056BA6001F9A70 /* UIView+MJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 604447E422056BA6001F9A70 /* UIView+MJToast.m */; };
 		6047338F21F6A49A00108A62 /* LocationJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6047338E21F6A49900108A62 /* LocationJson.json */; };
 		6047339221F6A55A00108A62 /* LMJProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6047339121F6A55A00108A62 /* LMJProvinceModel.m */; };
 		6051A56921FAB476009DED71 /* LMJBaseNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051A56821FAB476009DED71 /* LMJBaseNaviController.m */; };
@@ -64,6 +65,8 @@
 		600B3FAA21F9EE2F002BCD93 /* LMJMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJMapViewController.m; sourceTree = "<group>"; };
 		600B3FB021F9F088002BCD93 /* WGMapCommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMapCommonView.h; sourceTree = "<group>"; };
 		600B3FB121F9F088002BCD93 /* WGMapCommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGMapCommonView.m; sourceTree = "<group>"; };
+		604447E322056BA5001F9A70 /* UIView+MJToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJToast.h"; sourceTree = "<group>"; };
+		604447E422056BA6001F9A70 /* UIView+MJToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJToast.m"; sourceTree = "<group>"; };
 		6047338E21F6A49900108A62 /* LocationJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationJson.json; sourceTree = "<group>"; };
 		6047339021F6A55A00108A62 /* LMJProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJProvinceModel.h; sourceTree = "<group>"; };
 		6047339121F6A55A00108A62 /* LMJProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJProvinceModel.m; sourceTree = "<group>"; };
@@ -163,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		601BCE232223E6E1002F682E /* WGMap */ = {
+			isa = PBXGroup;
+			children = (
+				600B3FB021F9F088002BCD93 /* WGMapCommonView.h */,
+				600B3FB121F9F088002BCD93 /* WGMapCommonView.m */,
+			);
+			path = WGMap;
+			sourceTree = "<group>";
+		};
 		6051A56521FAB419009DED71 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +289,7 @@
 		60A28DEA21F60AF600199217 /* thirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				600B3FB021F9F088002BCD93 /* WGMapCommonView.h */,
-				600B3FB121F9F088002BCD93 /* WGMapCommonView.m */,
+				601BCE232223E6E1002F682E /* WGMap */,
 				60A28DEB21F60B0900199217 /* Masonry */,
 				60A28E3221F60B0A00199217 /* MJExtension */,
 			);
@@ -348,6 +359,8 @@
 		60A28EB321F60D3B00199217 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				604447E322056BA5001F9A70 /* UIView+MJToast.h */,
+				604447E422056BA6001F9A70 /* UIView+MJToast.m */,
 				60A28EB521F60D4900199217 /* UIImage+Color.h */,
 				60A28EB421F60D4900199217 /* UIImage+Color.m */,
 				6051A57821FB69C0009DED71 /* UILabel+Color.h */,
@@ -492,6 +505,7 @@
 				60A28E8921F60B0A00199217 /* NSObject+MJClass.m in Sources */,
 				60A28E7E21F60B0A00199217 /* NSArray+MASAdditions.m in Sources */,
 				60A28E6621F60B0A00199217 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				604447E522056BA6001F9A70 /* UIView+MJToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

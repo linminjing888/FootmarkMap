@@ -10,16 +10,18 @@
 #import "WGMapCommonView.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "UILabel+Color.h"
+#import "UIView+MJToast.h"
 
 #define Color_Yellow [UIColor colorWithRed:247/255.0 green:290/255.0 blue:32/255.0 alpha:1]
 static const CGFloat MapViewScale = 0.8;
+static const CGFloat SpacingW = 10;
 
 
 @interface LMJMapViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) WGMapCommonView *mapView;
 
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView     *imageView;
 
 @end
 
@@ -63,10 +65,11 @@ static const CGFloat MapViewScale = 0.8;
     bgView.backgroundColor = [UIColor colorWithRed:70/255.0 green:113/255.0 blue:151/255.0 alpha:1];
     [self.view addSubview:bgView];
     
+    // 标题
     NSString *provinceCount = [NSString stringWithFormat:@"%ld",self.provinceArr.count];
     NSString *cityCount = [NSString stringWithFormat:@"%ld",self.cityArr.count];
     UILabel *titleLabe = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, LSCREENW, LSCREENW * 0.1)];
-    titleLabe.text = [NSString stringWithFormat:@"踏足中国 %@ 个省区，%@ 个城市",provinceCount,cityCount];
+    titleLabe.text = [NSString stringWithFormat:@"走遍中国 %@ 个省区，%@ 个城市",provinceCount,cityCount];
     titleLabe.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLabe];
     
@@ -75,6 +78,15 @@ static const CGFloat MapViewScale = 0.8;
     
     //地图
     [bgView addSubview:self.mapView];
+    
+    //城市
+    NSString *cityStr = [self.cityArr componentsJoinedByString:@" "];
+    UILabel *cityLabe = [[UILabel alloc]initWithFrame:CGRectMake(SpacingW, LSCREENW * 0.9, LSCREENW - (SpacingW * 2), LSCREENW * 0.1)];
+    cityLabe.text = [NSString stringWithFormat:@"%@",cityStr];
+    cityLabe.font = [UIFont systemFontOfSize:10];
+    cityLabe.textAlignment = NSTextAlignmentCenter;
+    cityLabe.numberOfLines = 0;
+    [bgView addSubview:cityLabe];
     
     UIImage *shareImage = [self getImageFromView:bgView];
 
@@ -91,19 +103,19 @@ static const CGFloat MapViewScale = 0.8;
 #pragma mark - Lazy
 - (WGMapCommonView *)mapView {
     if (!_mapView) {
-        _mapView = [[WGMapCommonView alloc] init];
-        CGFloat scale = 0.62;
-        _mapView.transform = CGAffineTransformMakeScale(scale, scale);//宽高伸缩比例
-        _mapView.frame = CGRectMake(0, 0, LSCREENW, LSCREENW * MapViewScale);
-        _mapView.center = CGPointMake(LSCREENW * 0.5, LSCREENW * 0.5);
+        _mapView              = [[WGMapCommonView alloc] init];
+        CGFloat scale         = 0.62;
+        _mapView.transform    = CGAffineTransformMakeScale(scale, scale);//宽高伸缩比例
+        _mapView.frame        = CGRectMake(0, 0, LSCREENW, LSCREENW * MapViewScale);
+        _mapView.center       = CGPointMake(LSCREENW * 0.5, LSCREENW * 0.5);
         _mapView.pathFileName = @"ChinaMapPaths.plist";
         _mapView.infoFileName = @"provinceInfo.plist";
-        _mapView.clickEnable = NO;
-        _mapView.lineColor = [UIColor whiteColor];
-        _mapView.backColorD = [UIColor colorWithWhite:0.8 alpha:1];
-        _mapView.backColorH = Color_Yellow;
-        _mapView.seletedAry = self.provinceArr;
-        _mapView.nameColor = [UIColor blackColor];
+        _mapView.clickEnable  = NO;
+        _mapView.lineColor    = [UIColor whiteColor];
+        _mapView.backColorD   = [UIColor colorWithWhite:0.8 alpha:1];
+        _mapView.backColorH   = Color_Yellow;
+        _mapView.seletedAry   = self.provinceArr;
+        _mapView.nameColor    = [UIColor blackColor];
     }
     return _mapView;
 }
@@ -136,6 +148,7 @@ static const CGFloat MapViewScale = 0.8;
 
 #pragma mark - 保存图片到相册
 - (void)saveImage {
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     UIImage *saveImage = self.imageView.image;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImageWriteToSavedPhotosAlbum(saveImage,
@@ -146,11 +159,15 @@ static const CGFloat MapViewScale = 0.8;
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     
     if (error) {
-        NSLog(@"保存失败");
+        [self.navigationController.view makeToast:@"保存失败"];
     }
     else {
-        NSLog(@"Success");
+        [self.navigationController.view makeToast:@"保存成功"];
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    });
 }
 
 - (void)didReceiveMemoryWarning {

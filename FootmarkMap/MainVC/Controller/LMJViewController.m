@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UIButton *commitBtn;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSMutableArray *provinceNameArr;
-@property (nonatomic, strong) NSMutableArray *cityNameArr;
+@property (nonatomic, strong) NSMutableArray <NSString *> *cityNameArr;
 
 @end
 
@@ -108,7 +108,7 @@
             [self.provinceNameArr addObject:provinceModel.name];
             [provinceModel.city enumerateObjectsUsingBlock:^(LMJCityModel *cityModel, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (cityModel.isSelected) {
-                    [self.cityNameArr addObject:cityModel];
+                    [self.cityNameArr addObject:cityModel.name];
                 }
             }];
         }
