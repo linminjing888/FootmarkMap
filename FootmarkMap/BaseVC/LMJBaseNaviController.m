@@ -23,8 +23,7 @@
  load是只要类所在文件被引用就会被调用,所以如果类没有被引用进项目，就不会有load调用；
  initialize是在类或者其子类的第一个方法被调用前调用。但即使类文件被引用进来，但是没有使用，那么initialize也不会被调用。
  */
-+(void)initialize
-{
++ (void)initialize {
     // 设置为不透明
     //    [[UINavigationBar appearance] setTranslucent:NO];
     // 设置导航栏背景颜色

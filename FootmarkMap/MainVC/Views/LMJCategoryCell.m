@@ -11,11 +11,11 @@
 
 @interface LMJCategoryCell()
 
-@property (nonatomic, strong) UILabel * nameLabel;
+@property (nonatomic, strong) UILabel     *nameLabel;
 @property (nonatomic, strong) UIImageView *backImageView;
-@property (nonatomic, strong) UIView *yellowView;
-@property (nonatomic, strong) UIView *lineView;
-@property (nonatomic, strong) UILabel *numLabel;
+@property (nonatomic, strong) UIView      *yellowView;
+@property (nonatomic, strong) UIView      *lineView;
+@property (nonatomic, strong) UILabel     *numLabel;
 
 @end
 
@@ -88,10 +88,8 @@
             make.bottom.equalTo(self);
             make.height.mas_equalTo(1);
         }];
-
     }
     return self;
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

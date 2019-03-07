@@ -35,7 +35,6 @@ static const CGFloat SpacingW = 10;
     if (self.provinceArr.count == 0) {
         return;
     }
-    
     [self setupUI];
 }
 

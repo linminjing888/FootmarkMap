@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LMJViewController : UIViewController
+@interface LMJMainViewController : UIViewController
 
 
 @end

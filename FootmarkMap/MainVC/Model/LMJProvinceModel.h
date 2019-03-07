@@ -12,8 +12,8 @@ typedef void(^InfoCompleteBlock)(NSArray *dataArr, NSError *error) ;
 
 @interface LMJProvinceModel : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSArray *city;
+@property (nonatomic, copy  ) NSString  *name;
+@property (nonatomic, copy  ) NSArray   *city;
 /// 选中城市数量
 @property (nonatomic, assign) NSInteger count;
 
@@ -24,9 +24,8 @@ typedef void(^InfoCompleteBlock)(NSArray *dataArr, NSError *error) ;
 @interface LMJCityModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSArray *area;
+@property (nonatomic, copy) NSArray  *area;
 /// 是否选中
-@property (nonatomic, assign) BOOL isSelected;
-
+@property (nonatomic, assign) BOOL   isSelected;
 
 @end

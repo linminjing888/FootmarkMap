@@ -6,24 +6,24 @@
 //  Copyright © 2019 MinJing_Lin. All rights reserved.
 //
 
-#import "LMJViewController.h"
+#import "LMJMainViewController.h"
 #import "LMJCollectionViewController.h"
 #import "LMJCategoryCell.h"
 #import "LMJProvinceModel.h"
 #import "LMJMapViewController.h"
 
-@interface LMJViewController ()<UITableViewDelegate,UITableViewDataSource,LMJCollectionCityDelegate>
+@interface LMJMainViewController ()<UITableViewDelegate,UITableViewDataSource,LMJCollectionCityDelegate>
 
-@property (nonatomic, strong) UITableView * categoriesTableView;
+@property (nonatomic, strong) UITableView                 *categoriesTableView;
 @property (nonatomic, strong) LMJCollectionViewController *productsController;
-@property (nonatomic, strong) UIButton *commitBtn;
-@property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) NSMutableArray *provinceNameArr;
+@property (nonatomic, strong) UIButton                    *commitBtn;
+@property (nonatomic, strong) NSArray                     *dataArray;
+@property (nonatomic, strong) NSMutableArray <NSString *> *provinceNameArr;
 @property (nonatomic, strong) NSMutableArray <NSString *> *cityNameArr;
 
 @end
 
-@implementation LMJViewController
+@implementation LMJMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +37,8 @@
     [self loadData];
 }
 
+#pragma mark - 请求数据
 - (void)loadData {
-    
     __weak __typeof(self) weakSelf = self;
     [LMJProvinceModel loadLocationInfo:^(NSArray *dataArr, NSError *error) {
         __strong __typeof(weakSelf) strongSelf = weakSelf;
@@ -82,8 +82,7 @@
 }
 
 #pragma mark - ProductsDelegate
-
-- (void)LMJCollectionCityCount:(NSInteger)count Name:(NSString *)name {
+- (void)collectionCityCount:(NSInteger)count Name:(NSString *)name {
     [self.dataArray enumerateObjectsUsingBlock:^(LMJProvinceModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.name isEqualToString:name]) {
             obj.count = count;
@@ -121,7 +120,6 @@
 }
 
 - (void)commitBtnClicked {
-    
     if (self.cityNameArr.count == 0) {
         return;
     }
@@ -129,11 +127,9 @@
     mapVC.provinceArr = [self.provinceNameArr copy];
     mapVC.cityArr = [self.cityNameArr copy];
     [self.navigationController pushViewController:mapVC animated:YES];
-    
 }
 
 #pragma mark - setter/getter
-
 - (void)setUpcategoriesTableView {
     self.categoriesTableView = ({
         UITableView *tabView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];

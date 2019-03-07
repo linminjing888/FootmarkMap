@@ -11,10 +11,10 @@
 @implementation UILabel (Color)
 
 #pragma mark - 改变字的颜色
-- (void)changeStrokeColorWithTextStrikethroughColor:(UIColor *)textStrokeColor
-{
+- (void)changeStrokeColorWithTextStrikethroughColor:(UIColor *)textStrokeColor {
     [self changeStrokeColorWithTextStrikethroughColor:textStrokeColor changeText:self.text];
 }
+
 - (void)changeStrokeColorWithTextStrikethroughColor:(UIColor *)textStrokeColor changeText:(NSString *)text {
     
     if (!text) {

@@ -17,7 +17,7 @@
 		6051A57721FB6073009DED71 /* provinceInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6051A57621FB6072009DED71 /* provinceInfo.plist */; };
 		6051A57A21FB69C0009DED71 /* UILabel+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051A57921FB69C0009DED71 /* UILabel+Color.m */; };
 		60A28DC121F607AD00199217 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC021F607AD00199217 /* AppDelegate.m */; };
-		60A28DC421F607AD00199217 /* LMJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC321F607AD00199217 /* LMJViewController.m */; };
+		60A28DC421F607AD00199217 /* LMJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A28DC321F607AD00199217 /* LMJMainViewController.m */; };
 		60A28DC721F607AD00199217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DC521F607AD00199217 /* Main.storyboard */; };
 		60A28DC921F607AF00199217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DC821F607AF00199217 /* Assets.xcassets */; };
 		60A28DCC21F607AF00199217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A28DCA21F607AF00199217 /* LaunchScreen.storyboard */; };
@@ -79,8 +79,8 @@
 		60A28DBC21F607AD00199217 /* FootmarkMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootmarkMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A28DBF21F607AD00199217 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60A28DC021F607AD00199217 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		60A28DC221F607AD00199217 /* LMJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJViewController.h; sourceTree = "<group>"; };
-		60A28DC321F607AD00199217 /* LMJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJViewController.m; sourceTree = "<group>"; };
+		60A28DC221F607AD00199217 /* LMJMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMJMainViewController.h; sourceTree = "<group>"; };
+		60A28DC321F607AD00199217 /* LMJMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMJMainViewController.m; sourceTree = "<group>"; };
 		60A28DC621F607AD00199217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60A28DC821F607AF00199217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A28DCB21F607AF00199217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		60A28DE421F60A5A00199217 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				60A28DC221F607AD00199217 /* LMJViewController.h */,
-				60A28DC321F607AD00199217 /* LMJViewController.m */,
+				60A28DC221F607AD00199217 /* LMJMainViewController.h */,
+				60A28DC321F607AD00199217 /* LMJMainViewController.m */,
 				60A28E9B21F60BCA00199217 /* LMJCollectionViewController.h */,
 				60A28E9C21F60BCA00199217 /* LMJCollectionViewController.m */,
 				600B3FA921F9EE2F002BCD93 /* LMJMapViewController.h */,
@@ -472,7 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A28DC421F607AD00199217 /* LMJViewController.m in Sources */,
+				60A28DC421F607AD00199217 /* LMJMainViewController.m in Sources */,
 				60A28E8421F60B0A00199217 /* NSObject+MJKeyValue.m in Sources */,
 				6051A56921FAB476009DED71 /* LMJBaseNaviController.m in Sources */,
 				60A28E7B21F60B0A00199217 /* MASCompositeConstraint.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LMJViewController.h"
+#import "LMJMainViewController.h"
 #import "LMJBaseNaviController.h"
 
 @interface AppDelegate ()
@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    LMJViewController *VC = [[LMJViewController alloc] init];
+    LMJMainViewController *VC = [[LMJMainViewController alloc] init];
     LMJBaseNaviController *nav = [[LMJBaseNaviController alloc] initWithRootViewController:VC];
     self.window.rootViewController = nav;
     

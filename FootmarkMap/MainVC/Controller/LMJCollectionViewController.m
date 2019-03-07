@@ -11,13 +11,13 @@
 #import "LMJProvinceModel.h"
 
 static const CGFloat ColectionViewSpacingW = 10.0f;
-static const CGFloat ColectionViewScale = 0.75;;
+static const CGFloat ColectionViewScale = 0.75;
 
 @interface LMJCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout * flowLayout;
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) UICollectionView           *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) NSMutableArray             *dataArray;
 
 @end
 
@@ -64,7 +64,7 @@ static const CGFloat ColectionViewScale = 0.75;;
             cityCount++;
         }
     }];
-    [self.delegate LMJCollectionCityCount:cityCount Name:self.provinceModel.name];
+    [self.delegate collectionCityCount:cityCount Name:self.provinceModel.name];
 }
 
 #pragma mark getter/setter

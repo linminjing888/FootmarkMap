@@ -10,7 +10,7 @@
 
 @implementation LMJProvinceModel
 
-+(NSDictionary*)mj_objectClassInArray {
++ (NSDictionary *)mj_objectClassInArray {
     return @{@"city":NSStringFromClass([LMJCityModel class])};
 }
 
@@ -27,6 +27,5 @@
 @end
 
 @implementation LMJCityModel
-
 
 @end

@@ -12,7 +12,7 @@
 
 @protocol LMJCollectionCityDelegate<NSObject>
 
-- (void)LMJCollectionCityCount:(NSInteger)count Name:(NSString *)name;
+- (void)collectionCityCount:(NSInteger)count Name:(NSString *)name;
 
 @end
 
